@@ -16,25 +16,15 @@ main{
     grid-template-rows: auto auto;
     /* background: yellow; */
     margin-top: 10%;
+    padding: 5%;
 }
-.info__member1 {
-    /* background: green; */
-    grid-column: 1 / 2; 
-    grid-row: 1 / 2; 
-    display: flex;
-    justify-content: center;
-}
-.info__member2{
-    /* background: green; */
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    display: flex;
-    justify-content: center;
-}
-.info__member3{
-    /* background: green; */
+.info__Crews article:nth-child(4n-1){
+    background: green;
     grid-column: 1 / span 2; 
-    grid-row: 2 / 3; 
+    display: flex;
+    justify-content: center;
+}
+.info__member{
     display: flex;
     justify-content: center;
 }
