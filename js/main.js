@@ -1,15 +1,25 @@
 import { getAllCrews } from "./modules/app.js";
 
-let infoCrews = document.querySelector(".info__Crews");
+let allInfoContent = document.querySelector(".allinfo__content");
+let menuCrew = document.querySelector(".article__crew");
+let menuLaunche = document.querySelector(".article__launches");
+let section = document.querySelector("#section");
 
-addEventListener("click", async e => { 
-    infoCrews.innerHTML = await getAllCrews(); 
-});
 
-addEventListener("click", async e => {
+let viewCrew = async e => {
+    allInfoContent.innerHTML = await getAllCrews(); 
     let styles = document.querySelector("#styles");
-    console.log(styles);
     styles.href = 'css/styleCREW.css';
-});
+}
+let viewLaunches = async e => {
+    section.innerHTML = ""; 
+    let styles = document.querySelector("#styles");
+    styles.href = 'css/style.css';
+}
+
+menuCrew.addEventListener("click", viewCrew);
+menuLaunche.addEventListener("click", viewLaunches);
+
+
 
 console.log(await getAllCrews()); 

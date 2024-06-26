@@ -20,7 +20,7 @@ footer{
     width: 87%;
     /* background: yellow; */
 }
-.article__crew{
+.article__crew, .article__launches{
     display: flex;
     flex-direction: column;
     /* background: green; */
@@ -28,12 +28,12 @@ footer{
     align-items: center;
     padding: 5px;
 }
-.article__crew img{
+.article__crew img, .article__launches img{
     width: 100%;
     filter: invert();
     /* background: red; */
 }
-.article__crew p{
+.article__crew p, .article__launches p{
     margin-top: 0px;
     color: var(--color-3);
 }

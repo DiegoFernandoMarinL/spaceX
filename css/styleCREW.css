@@ -10,7 +10,7 @@ body{
 main{
 
 }
-.info__Crews {
+.allinfo__content {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto auto;
@@ -20,7 +20,7 @@ main{
 .image__info img{
     width: 160px;
 }
-.info__Crews article:nth-child(4n-1){
+.allinfo__content article:nth-child(4n-1){
     /* background: green; */
     grid-column: 1 / span 2; 
     display: flex;
@@ -48,7 +48,7 @@ footer{
     width: 87%;
     /* background: yellow; */
 }
-.article__crew{
+.article__crew, .article__launches{
     display: flex;
     flex-direction: column;
     /* background: green; */
@@ -56,12 +56,12 @@ footer{
     align-items: center;
     padding: 5px;
 }
-.article__crew img{
+.article__crew img, .article__launches img{
     width: 100%;
     filter: invert();
     /* background: red; */
 }
-.article__crew p{
+.article__crew p, .article__launches p{
     margin-top: 0px;
     color: var(--color-3);
 }
