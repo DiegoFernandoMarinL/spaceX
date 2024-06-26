@@ -1,12 +1,74 @@
 @import url(variables.css);
 
 body{
-    width: 100vw;
-    height: 100vh;;
+    background: var(--color-1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+main{
+
 }
 .info__Crews {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    /* background: yellow; */
+    margin-top: 10%;
 }
-.info__member {
+.info__member1 {
+    /* background: green; */
+    grid-column: 1 / 2; 
+    grid-row: 1 / 2; 
+    display: flex;
+    justify-content: center;
+}
+.info__member2{
+    /* background: green; */
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+}
+.info__member3{
+    /* background: green; */
+    grid-column: 1 / span 2; 
+    grid-row: 2 / 3; 
+    display: flex;
+    justify-content: center;
+}
+.container__info{
+    display: flex;
+    /* background: red; */
+}
+footer{
+    background: var(--color-2);
+    clip-path: polygon(10% 25%, 90% 25%, 100% 100%, 0% 100%);
+    padding-left: 7%;
+    padding-top: 3%;
+    width: 60%;
+    align-self: center;
 }
 .footer__menu {
+    display: flex;
+    width: 87%;
+    /* background: yellow; */
+}
+.article__menu{
+    display: flex;
+    flex-direction: column;
+    /* background: green; */
+    width: 60px;
+    align-items: center;
+    padding: 5px;
+}
+.article__menu img{
+    width: 100%;
+    filter: invert();
+    /* background: red; */
+}
+.article__menu p{
+    margin-top: 0px;
+    color: var(--color-3);
 }
