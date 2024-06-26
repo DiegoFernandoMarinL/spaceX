@@ -3,8 +3,6 @@ import { getAllCrews } from "./modules/app.js";
 let allInfoContent = document.querySelector(".allinfo__content");
 let menuCrew = document.querySelector(".article__crew");
 let menuLaunche = document.querySelector(".article__launches");
-let section = document.querySelector("#section");
-
 
 let viewCrew = async e => {
     allInfoContent.innerHTML = await getAllCrews(); 
@@ -12,7 +10,7 @@ let viewCrew = async e => {
     styles.href = 'css/styleCREW.css';
 }
 let viewLaunches = async e => {
-    section.innerHTML = ""; 
+    allInfoContent.innerHTML = ""; 
     let styles = document.querySelector("#styles");
     styles.href = 'css/style.css';
 }
@@ -22,4 +20,4 @@ menuLaunche.addEventListener("click", viewLaunches);
 
 
 
-console.log(await getAllCrews()); 
+

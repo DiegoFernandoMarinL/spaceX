@@ -8,11 +8,11 @@ export const getAllCrews = async () => {
         const element = data[index];
         plantilla.push(element);
     }
-    plantilla = plantillaCrew(plantilla);
+    plantilla = await plantillaCrew(plantilla);
     return plantilla; 
 };
 
-export const getAllLaunches = async (dato) => {
+export const getLaunche = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/launches/${dato}`); 
     let data = await res.json();
     return data; 

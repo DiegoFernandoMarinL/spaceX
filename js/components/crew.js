@@ -1,10 +1,9 @@
-import { getAllLaunches } from "../modules/app.js";
+import { getLaunche } from "../modules/app.js";
 
-export const plantillaCrew = (data)=>{
+export const plantillaCrew = async (data)=>{
     let plantilla = "";
-    data.forEach(element => {
-        let launche = getAllLaunches(element.launches);
-        console.log(launche);
+    for (const element of data){
+        let launche = await getLaunche(element.launches);
         plantilla += /*html*/`
             <article class="info__member">
                 <div class="container__info">
@@ -19,7 +18,7 @@ export const plantillaCrew = (data)=>{
                     </div>
                 </div>
             </article>
-        `; 
-    });
+        `;
+    };
     return plantilla;
-}
+};
