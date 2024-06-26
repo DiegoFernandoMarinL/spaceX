@@ -7,6 +7,34 @@ body{
     justify-content: space-between;
     height: 100vh;
 }
+main{
+
+}
+.info__Crews {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+    /* background: yellow; */
+    margin-top: 5%;
+}
+.image__info img{
+    width: 160px;
+}
+.info__Crews article:nth-child(4n-1){
+    /* background: green; */
+    grid-column: 1 / span 2; 
+    display: flex;
+    justify-content: center;
+}
+.info__member{
+    display: flex;
+    justify-content: center;
+}
+.container__info{
+    display: flex;
+    color: var(--color-3);
+    /* background: red; */
+}
 footer{
     background: var(--color-2);
     clip-path: polygon(10% 25%, 90% 25%, 100% 100%, 0% 100%);
