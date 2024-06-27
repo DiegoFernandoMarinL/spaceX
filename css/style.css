@@ -28,18 +28,44 @@ main{
 .center__container {
     background: orange;
     width: 70vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 .content__graphics {
     background: green;
     height: 20vh;
 }
 .content__image {
+    display: flex;
     background: white;
-    height: 20vh;
+    height: 30vh;
+    width: 20vw;
+    overflow-x: scroll;
+    align-self: center;
+    border-radius: 5%;
+}
+.content__image img{
+    width: 20vw;
+    margin-right: 1vw;
 }
 .content__scroll {
-    background: pink;
+    /* background: pink; */
+    display: flex;
+    justify-content: space-between;
     height: 20vh;
+    width: 100vw;
+}
+.scroll__rigth{
+    background: blue;
+    width: 20vw;
+    overflow-y: scroll;
+}
+.scroll__left{
+    background: blue;
+    width: 20vw;
+    overflow-y: scroll;
+    text-align: justify;
 }
 .left__container {
     background: gray;

@@ -78,3 +78,17 @@ footer{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background: red; */
 }
+.section__pagination{
+    /* background: green; */
+    width: 14vw;
+    display: flex;
+    overflow-x: scroll;
+    position: absolute;
+    top: 45vw;
+    left: 43vw;
+}
+.section__pagination a{
+    font-size: 1.5vw;
+    padding: 0.5vw;
+    color: var(--color-3);
+}
