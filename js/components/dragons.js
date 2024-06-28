@@ -1,9 +1,15 @@
+import { plantillaImg } from "./img.js";
+import { plantillaPagination } from "./pagination.js";
+
 export const plantillaDragons = async (data)=>{
     let plantilla = "";
     let estado = false;
     let cont = 0;
+    let plantillaimg = "";
+    let plantillaPag = "";
     for (const element of data){
-        
+        plantillaimg = await plantillaImg(element.flickr_images);
+        plantillaPag = await plantillaPagination(data.length);
         if (element.active == true){
             estado = "Active";
         }else{estado = "Inactive"};
@@ -13,7 +19,7 @@ export const plantillaDragons = async (data)=>{
                     <li><img src="storage/img/item.svg">Decription:</li>
                     <p>${element.description}</p>
                     <li><img src="storage/img/item.svg">More info:</li>
-                    <a href="${element.wikipedia}">${element.wikipedia}</a>
+                    <a href="${element.wikipedia}">Wikipedia</a>
                 </ul>
             </div>
             <div class="column center">
@@ -91,13 +97,15 @@ export const plantillaDragons = async (data)=>{
                                     <td>Dry mass lb:</td>
                                     <td>${element.dry_mass_lb}</td>
                                 </tr>
+                                <tr>
+                                    <td>First flight:</td>
+                                    <td>${element.first_flight}</td>
+                                </tr>
                             </tbody>
-
                         </table>
                     </div>
                     <div class="image-container">
-                        <img src="https://farm3.staticflickr.com/2815/32761844973_4b55b27d3c_b.jpg">
-                        <img src="https://farm3.staticflickr.com/2815/32761844973_4b55b27d3c_b.jpg">
+                        ${plantillaimg}
                     </div>
                     <div class="scroll-container">
                         <h5>Engine Information</h5>
@@ -190,20 +198,60 @@ export const plantillaDragons = async (data)=>{
                 <table>
                     <tbody>
                         <tr>
-                            <td>Item 1</td>
-                            <td>Texto</td>
+                            <td>Launch payload mass</td>
+                            <td>${element.launch_payload_mass.kg} kg</td>
                         </tr>
                         <tr>
                             <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
-                            <td>Texto</td>    
+                            <td>${element.launch_payload_mass.lb} lb</td>    
                         </tr>
                         <tr>
-                            <td>Item 1</td>
-                            <td>Texto</td>
+                            <td>Launch payload vol</td>
+                            <td>${element.launch_payload_vol.cubic_meters} m3</td>
                         </tr>
                         <tr>
                             <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
-                            <td>Texto</td>    
+                            <td>${element.launch_payload_vol.cubic_feet} ft3</td>    
+                        </tr>
+                        <tr>
+                            <td>Return payload mass</td>
+                            <td>${element.return_payload_mass.kg} kg</td>
+                        </tr>
+                        <tr>
+                            <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
+                            <td>${element.return_payload_mass.lb} lb</td>    
+                        </tr>
+                        <tr>
+                            <td>Return payload vol</td>
+                            <td>${element.return_payload_vol.cubic_meters} m3</td>
+                        </tr>
+                        <tr>
+                            <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
+                            <td>${element.return_payload_vol.cubic_feet} ft3</td>    
+                        </tr>
+                        <tr>
+                            <td>Payload volume</td>
+                            <td>${element.pressurized_capsule.payload_volume.cubic_meters} m3</td>
+                        </tr>
+                        <tr>
+                            <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
+                            <td>${element.pressurized_capsule.payload_volume.cubic_feet} ft3</td>    
+                        </tr>
+                        <tr>
+                            <td>Trunk volume</td>
+                            <td>${element.trunk.trunk_volume.cubic_meters} m3</td>
+                        </tr>
+                        <tr>
+                            <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
+                            <td>${element.trunk.trunk_volume.cubic_feet} ft3</td>    
+                        </tr>
+                        <tr>
+                            <td>Diameter</td>
+                            <td>${element.diameter.meters} m</td>
+                        </tr>
+                        <tr>
+                            <td><div class="progress-bar" style="width: 85%; background-color: #f44336;">85%</div></td>
+                            <td>${element.diameter.feet} ft</td>    
                         </tr>
                     </tbody>
                 </table>

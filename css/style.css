@@ -5,17 +5,16 @@ body {
     background: var(--color-1);
 }
 .allinfo__content{
-    padding: 20px;
     display: flex;
-    width: 100vw;
-    height: 100vh;
-    justify-content: space-between;
     color: var(--color-3);
+    /* background: yellow; */
+    justify-content: center;
 }
 .column.left, .column.right {
     display: flex;
     flex-direction: column;
-    width: 20%;
+    width: 250px;
+    font-size: 15px;
     /* background: red; */
 }
 .list {
@@ -33,7 +32,8 @@ body {
 .center {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    width: 850px;
+    /* background: green; */
 }
 .section {
     margin-bottom: 20px;
@@ -85,22 +85,20 @@ body {
     justify-content: space-between;
     margin-bottom: 20px;
     /* background: red; */
-    height: 400px;
+    height: 40vh;
 }
 .scroll-container {
     height: 200px;
     overflow-y: scroll;
     margin-right: 20px;
     align-self: flex-end;
+    width: 350px;
 }
 .scroll-container table {
     width: 100%;
-    border-collapse: collapse;
+    font-size: 15px;
 }
-.scroll-container table, .scroll-container th, .scroll-container td {
-    border: 1px solid #ddd;
-}
-.scroll-container th, .scroll-container td {
+.scroll-container th{
     padding: 8px;
     text-align: left;
 }
@@ -112,8 +110,8 @@ body {
 }
 .image-container img {
     margin-right: 10px;
-    width: 600px;
-    height: 300px;
+    width: 400px;
+    height: 200px;
 }
 .polygon-menu {
     display: flex;
@@ -158,7 +156,7 @@ body {
     display: flex;
     overflow-x: scroll;
     width: 370px;
-    height: 90px;
+    height: 60px;
 }
 .hexagon {
     position: relative;
