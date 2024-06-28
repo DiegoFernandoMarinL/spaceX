@@ -36,9 +36,6 @@ export const getLaunche = async (dato) => {
 export const getAllDragons = async () => {
     let res = await fetch(`https://api.spacexdata.com/v4/dragons`); 
     let data = await res.json();
-    console.log(data);
-    let plantilla = [];
-    plantilla = await plantillaDragons(data);
-    console.log(plantilla);
+    let plantilla = await plantillaDragons(data);
     return plantilla;
 }

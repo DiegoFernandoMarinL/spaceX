@@ -1,10 +1,14 @@
 import { getAllCrews } from "./modules/app.js";
-import { plantillaPagination } from "./components/pagination.js";
+// import { plantillaPagination } from "./components/pagination.js";
 import { getAllDragons } from "./modules/app.js";
 
 let allInfoContent = document.querySelector(".allinfo__content");
-let menuCrew = document.querySelector(".article__crew");
-let menuLaunche = document.querySelector(".article__launches");
+let menuCrew = document.querySelector("#crew");
+let menuDragons = document.querySelector("#dragons");
+
+document.addEventListener("DOMContentLoaded", async () => {
+    await viewDragons();
+});
 
 let viewCrew = async e => {
     allInfoContent.innerHTML = await getAllCrews(); 
@@ -23,7 +27,7 @@ let viewDragons = async e => {
 }
 
 menuCrew.addEventListener("click", viewCrew);
-menuLaunche.addEventListener("click", viewDragons);
+menuDragons.addEventListener("click", viewDragons);
 
 
 

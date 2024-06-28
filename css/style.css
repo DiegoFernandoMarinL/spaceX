@@ -10,6 +10,7 @@ body {
     width: 100vw;
     height: 100vh;
     justify-content: space-between;
+    color: var(--color-3);
 }
 .column.left, .column.right {
     display: flex;
