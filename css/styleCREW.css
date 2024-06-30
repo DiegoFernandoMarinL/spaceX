@@ -45,50 +45,52 @@ main{
 .trapezoid-container {
     position: absolute;
     bottom: 0;
-    left: 50%; 
+    left: 50vw;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
-    width: 600px;
+    width: 40vw;
     margin: 0 auto;
     clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
-    padding: 20px;
-    background-color: blue;
+    padding: 0px 20px 0px 20px;
+    background-color: var(--color-2);
 }
 .trapexoid-scroll{
     display: flex;
     overflow-x: scroll;
-    width: 370px;
-    height: 60px;
+    width: 26vw;
+    height: 11vh;
+    /* background: red; */
 }
 .hexagon {
     position: relative;
-    width: 100px;
-    height: 58px;
+    width: 100vw;
+    height: 7vh;
     margin-right: 10px;
 }
 .hexagon-inner {
+    /* background: yellow; */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 7vh;
     text-align: center;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
     transition: background 0.3s;
 }
 .hexagon-inner:hover {
     background: #e0e0e0;
 }
 .hexagon-inner img {
-    width: 30px;
-    height: 30px;
+    width: 1.8vw;
     margin-bottom: 5px;
     filter: invert();
 }
 .hexagon-inner span {
     color: var(--color-3);
+    font-size: 1vw;
 }
 .article__crew, .article__launches{
     display: flex;
@@ -110,17 +112,30 @@ main{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     /* background: red; */
 }
-.section__pagination{
-    /* background: green; */
-    width: 14vw;
-    display: flex;
-    overflow-x: scroll;
+.pagination-container {
     position: absolute;
-    top: 45vw;
-    left: 43vw;
+    bottom: 20px;
+    left: 85vw;
+    transform: translateX(-50%);
+    overflow-x: auto;
+    white-space: nowrap;
+    margin-top: auto;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    width: 15vw;
+    font-size: 1vw;
 }
-.section__pagination a{
-    font-size: 1.5vw;
-    padding: 0.5vw;
-    color: var(--color-3);
+.pagination {
+    display: inline-block;
+    padding: 10px;
+    text-decoration: none;
+    color: #007bff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+.pagination:hover {
+    background-color: #007bff;
+    color: white;
 }

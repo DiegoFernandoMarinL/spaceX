@@ -1,29 +1,24 @@
-import { plantillaCrew } from "../components/crew.js";
+import { plantillaCrew, } from "../components/crew.js";
 import { plantillaDragons } from "../components/dragons.js";
+import { plantillaRockets } from "../components/rockets.js";
 
-export const getAllCrews = async () => { 
+export const getAllCrews = async (dato) => { 
     let res = await fetch("https://api.spacexdata.com/v4/crew"); 
     let data = await res.json(); 
     let plantilla= [];
 
-    function dividirArrayEnPartes(array, numeroDePartes) {
-        const longitudParte = Math.ceil(array.length / numeroDePartes);
-        const partes = [];
+    function dividirArray(array, Npartes) {
+        let longitudParte = Math.ceil(array.length / Npartes);
+        let partes = [];
         for (let i = 0; i < array.length; i += longitudParte) {
             partes.push(array.slice(i, i + longitudParte));
         }
         return partes;
     }
-    const array = data;
-    const numeroDePartes = 10;
-    const dataDividida = dividirArrayEnPartes(array, numeroDePartes);
-    console.log(dataDividida);
-
-    for (let index = 0; index < 3; index++) {
-        const element = data[index];
-        plantilla.push(element);
-    }
-    plantilla = await plantillaCrew(plantilla);
+    let array = data;
+    let Npartes = 10;
+    let dataDividida = dividirArray(array, Npartes);
+    plantilla = await plantillaCrew(dataDividida[dato]);
     return plantilla; 
 };
 
@@ -37,5 +32,12 @@ export const getAllDragons = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/dragons`); 
     let data = await res.json();
     let plantilla = await plantillaDragons(data[dato], data);
+    return plantilla;
+}
+
+export const getAllRockets = async (dato) => {
+    let res = await fetch(`https://api.spacexdata.com/v4/rockets`); 
+    let data = await res.json();
+    let plantilla = await plantillaRockets(data[dato], data);
     return plantilla;
 }

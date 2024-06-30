@@ -1,7 +1,10 @@
 import { getLaunche } from "../modules/app.js";
+import { plantillaPagination } from "./pagination.js";
 
 export const plantillaCrew = async (data)=>{
     let plantilla = "";
+    let plantillaPag = "";
+    plantillaPag = await plantillaPagination(10);
     for (const element of data){
         let launche = await getLaunche(element.launches);
         plantilla += /*html*/`
@@ -16,6 +19,9 @@ export const plantillaCrew = async (data)=>{
                     <div class="image__info">
                         <img src="${element.image}" referrerpolicy="no-referrer">
                     </div>
+                </div>
+                <div class="pagination-container">
+                    ${plantillaPag}
                 </div>
             </article>
         `;

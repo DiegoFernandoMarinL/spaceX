@@ -1,24 +1,22 @@
-import { getAllCrews } from "./modules/app.js";
-// import { plantillaPagination } from "./components/pagination.js";
-import { getAllDragons } from "./modules/app.js";
+import { getAllCrews, getAllDragons, getAllRockets } from "./modules/app.js";
 
 let intervalId;
 let allInfoContent = document.querySelector(".allinfo__content");
 let menuCrew = document.querySelector("#crew");
 let menuDragons = document.querySelector("#dragons");
+let menuRockets = document.querySelector("#rockets");
+
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await viewDragons();
+    await viewRockets();
 });
 
 let viewCrew = async e => {
-    allInfoContent.innerHTML = await getAllCrews(); 
     let styles = document.querySelector("#styles");
     styles.href = 'css/styleCREW.css';
-    let pagination = document.querySelector(".section__pagination");
-    addEventListener("DOMContentLoaded", async e=>{
-        pagination.innerHTML = await plantillaPagination();
-    });
+    allInfoContent.innerHTML = ""; 
+    allInfoContent.innerHTML = await getAllCrews("0");
+    repeatPagination(getAllCrews);
 }
 
 let viewDragons = async e => {
@@ -27,6 +25,14 @@ let viewDragons = async e => {
     allInfoContent.innerHTML = ""; 
     allInfoContent.innerHTML = await getAllDragons("0");
     repeatPagination(getAllDragons);
+}
+
+let viewRockets = async e => {
+    let styles = document.querySelector("#styles");
+    styles.href = 'css/style.css';
+    allInfoContent.innerHTML = ""; 
+    allInfoContent.innerHTML = await getAllRockets("0");
+    repeatPagination(getAllRockets);
 }
 
 let repeatPagination = (functionView) => {
@@ -38,7 +44,6 @@ let repeatPagination = (functionView) => {
             allInfoContent.innerHTML = await functionView(clickedId-1);
         });
     });
-
     intervalId = setInterval(() => {
         pagination = document.querySelectorAll(".pagination");
         pagination.forEach(element => {
@@ -55,9 +60,14 @@ menuCrew.addEventListener("click", () => {
     viewCrew();
     clearInterval(intervalId);
 });
-
-menuCrew.addEventListener("click", viewCrew);
-menuDragons.addEventListener("click", viewDragons);
+menuDragons.addEventListener("click", () => {
+    viewDragons();
+    clearInterval(intervalId);
+});
+menuRockets.addEventListener("click", () => {
+    viewRockets();
+    clearInterval(intervalId);
+});
 
 
 

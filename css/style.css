@@ -202,10 +202,10 @@ body {
     overflow-x: auto;
     white-space: nowrap;
     margin-top: auto;
-    height: 40px;
+    height: 10vh;
     display: flex;
     align-items: center;
-    width: 200px;
+    width: 15vw;
 }
 .pagination {
     display: inline-block;
