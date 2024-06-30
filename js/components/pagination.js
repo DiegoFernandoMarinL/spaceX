@@ -1,8 +1,9 @@
-export const plantillaPagination = async (data)=>{
-    data.forEach(element => {
-        console.log(element)
-        plantilla = /*html*/`
-            <a href="">1</a>
-        `;
-    });
+export const plantillaPagination = async (dato)=>{
+    let plantilla = "";
+    for (let index = 1; index < dato+1; index++) {
+        plantilla += /*html*/`
+            <a href="#" class="pagination" id="${index}">${index}</a>
+        `
+    }
+    return plantilla;
 }

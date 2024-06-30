@@ -21,7 +21,7 @@ main{
     grid-column: 1 / span 2; 
     display: flex;
     justify-content: center;
-    margin-top: 4vw;
+    margin-top: 2vw;
 }
 .info__member{
     display: flex;
@@ -42,21 +42,53 @@ main{
     width: 12vw;
     box-shadow: 0px 0px 30px rgb(255, 255, 255);
 }
-footer{
-    background: var(--color-2);
-    clip-path: polygon(10% 60%, 90% 60%, 100% 100%, 0% 100%);
-    padding-left: 7vw;
-    padding-top: 3vw;
-    width: 60vw;
-    align-self: center;
-    /* background: red; */
-}
-.footer__menu {
+.trapezoid-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    transform: translateX(-50%);
     display: flex;
-    width: 53vw;
-    height: 10vw;
-    /* background: yellow; */
-    align-items: end;
+    justify-content: center;
+    width: 600px;
+    margin: 0 auto;
+    clip-path: polygon(25% 0%, 75% 0%, 100% 100%, 0% 100%);
+    padding: 20px;
+    background-color: blue;
+}
+.trapexoid-scroll{
+    display: flex;
+    overflow-x: scroll;
+    width: 370px;
+    height: 60px;
+}
+.hexagon {
+    position: relative;
+    width: 100px;
+    height: 58px;
+    margin-right: 10px;
+}
+.hexagon-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 10px;
+    transition: background 0.3s;
+}
+.hexagon-inner:hover {
+    background: #e0e0e0;
+}
+.hexagon-inner img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+    filter: invert();
+}
+.hexagon-inner span {
+    color: var(--color-3);
 }
 .article__crew, .article__launches{
     display: flex;
