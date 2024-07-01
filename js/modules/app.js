@@ -38,6 +38,7 @@ export const getAllDragons = async (dato) => {
 export const getAllRockets = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/rockets`); 
     let data = await res.json();
+    console.log(data);
     let plantilla = await plantillaRockets(data[dato], data);
     return plantilla;
 }
