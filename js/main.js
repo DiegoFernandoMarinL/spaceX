@@ -1,4 +1,4 @@
-import { getAllCrews, getAllDragons, getAllRockets, getAllLaunches } from "./modules/app.js";
+import { getAllCrews, getAllDragons, getAllRockets, getAllLaunches, getAllHistory } from "./modules/app.js";
 
 let intervalId;
 let allInfoContent = document.querySelector(".allinfo__content");
@@ -6,15 +6,15 @@ let menuCrew = document.querySelector("#crew");
 let menuDragons = document.querySelector("#dragons");
 let menuRockets = document.querySelector("#rockets");
 let menuLaunches = document.querySelector("#launches");
-
+let menuHistory = document.querySelector("#history");
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await viewLaunches();
+    await viewHistory();
 });
 
 let viewCrew = async e => {
     let styles = document.querySelector("#styles");
-    styles.href = 'css/styleCREW.css';
+    styles.href = 'css/style2.css';
     allInfoContent.innerHTML = ""; 
     allInfoContent.innerHTML = await getAllCrews("0");
     repeatPagination(getAllCrews);
@@ -42,6 +42,14 @@ let viewLaunches = async e => {
     allInfoContent.innerHTML = ""; 
     allInfoContent.innerHTML = await getAllLaunches("0");
     repeatPagination(getAllLaunches);
+}
+
+let viewHistory = async e => {
+    let styles = document.querySelector("#styles");
+    styles.href = 'css/style2.css';
+    allInfoContent.innerHTML = ""; 
+    allInfoContent.innerHTML = await getAllHistory("0");
+    repeatPagination(getAllHistory);
 }
 
 let repeatPagination = (functionView) => {
@@ -79,6 +87,10 @@ menuRockets.addEventListener("click", () => {
 });
 menuLaunches.addEventListener("click", () => {
     viewLaunches();
+    clearInterval(intervalId);
+});
+menuHistory.addEventListener("click", () => {
+    viewHistory();
     clearInterval(intervalId);
 });
 

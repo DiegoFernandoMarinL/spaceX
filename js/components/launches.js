@@ -187,7 +187,7 @@ export const plantillaLaunches = async (data, alldata)=>{
                     </tr>
                     <tr>
                         <td><h3>Launchpad:</h3></td>
-                        <td>${vlaunchpad} lb</td>    
+                        <td>${vlaunchpad}</td>    
                     </tr>
                 </tbody>
             </table>
