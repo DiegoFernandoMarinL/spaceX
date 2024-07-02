@@ -11,6 +11,5 @@ export const plantillaGraphics = async (len, data)=>{
             </div>
         `
     }
-    console.log(plantilla);
     return plantilla;
 }

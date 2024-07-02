@@ -48,6 +48,9 @@ body {
     justify-content: space-around;
     margin-bottom: 20px;
 }
+.circular-bar img{
+    width: 8vw;
+}
 .circular-chart {
     position: relative;
     display: flex;

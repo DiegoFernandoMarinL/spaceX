@@ -256,7 +256,7 @@ export const plantillaRockets = async (data, alldata)=>{
                         <td>${data.second_stage.thrust.lbf} lbf</td>    
                     </tr>
                     <tr>
-                        <td>Payloads-composite fairing-height</td>
+                        <td>Payloads-composite fairing Height</td>
                         <td>${data.second_stage.payloads.composite_fairing.height.meters} m</td>
                     </tr>
                     <tr>
@@ -264,7 +264,7 @@ export const plantillaRockets = async (data, alldata)=>{
                         <td>${data.second_stage.payloads.composite_fairing.height.feet} ft</td>    
                     </tr>
                     <tr>
-                        <td>Diameter</td>
+                        <td>Payloads-composite fairing Diameter</td>
                         <td>${data.second_stage.payloads.composite_fairing.diameter.meters} m</td>
                     </tr>
                     <tr>
