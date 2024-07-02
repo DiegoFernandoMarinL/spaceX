@@ -1,4 +1,5 @@
 export const plantillaPagination = async (dato)=>{
+    console.log(dato)
     let plantilla = "";
     for (let index = 1; index < dato+1; index++) {
         plantilla += /*html*/`

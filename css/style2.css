@@ -15,6 +15,8 @@ main{
     grid-template-rows: auto auto;
     /* background: yellow; */
     margin-top: 5vw;
+    place-items: center;
+    height: 70vh;
 }
 .allinfo__content article:nth-child(4n-1){
     /* background: green; */
@@ -23,6 +25,11 @@ main{
     justify-content: center;
     margin-top: 2vw;
 }
+.info__historys{
+    display: flex;
+    justify-content: center;
+    /* background: red; */
+}
 .info__member{
     display: flex;
     justify-content: center;
@@ -30,17 +37,25 @@ main{
 .container__info{
     display: flex;
     color: var(--color-3);
+    width: 40vw;
     /* background: red; */
 }
 .content__info{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.3vw;
     margin-right: 4vw;
-    
 }
 .image__info img{
     width: 12vw;
     box-shadow: 0px 0px 30px rgb(255, 255, 255);
+}
+.description__info{
+    width: 20vw;
+    height: 20vh;
+    overflow-y: scroll;
+}
+.description__info p{
+    font-size: 1vw;
 }
 .trapezoid-container {
     position: absolute;

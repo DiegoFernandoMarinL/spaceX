@@ -116,6 +116,6 @@ export const getAllHistory = async (dato) => {
     let array = data;
     let Npartes = 5;
     let dataDividida = dividirArray(array, Npartes);
-    plantilla = await plantillaHistory(dataDividida[dato], data);
+    plantilla = await plantillaHistory(dataDividida[dato]);
     return plantilla;
 }
