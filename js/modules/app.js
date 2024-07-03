@@ -1,4 +1,4 @@
-import { plantillaCrew, } from "../components/crew.js";
+import { plantillaCrew } from "../components/crew.js";
 import { plantillaDragons } from "../components/dragons.js";
 import { plantillaRockets } from "../components/rockets.js";
 import { plantillaLaunches } from "../components/launches.js";
