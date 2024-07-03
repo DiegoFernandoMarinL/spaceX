@@ -123,7 +123,7 @@ main{
     transition: background 0.3s;
 }
 .hexagon-inner:hover {
-    background: #e0e0e0;
+    background: #011468;
 }
 
 .hexagon-inner img {
