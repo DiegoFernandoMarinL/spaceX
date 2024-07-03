@@ -4,7 +4,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('../storage/img/video.mp4');
+    background-image: url('../storage/img/galaxy_background.gif');
     background-size: cover;
     background-repeat: repeat; 
     background-position: center; 
@@ -43,6 +43,14 @@ main{
     width: 40vw;
     /* background: red; */
 }
+.container__info_core{
+    display: flex;
+    color: var(--color-3);
+    width: 40vw;
+    box-shadow: 0px 0px 30px rgb(255, 255, 255);
+    padding: 1vw;
+    border-radius: 2vw;
+}
 .content__info{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.3vw;
@@ -51,7 +59,7 @@ main{
 .content__info_core{
     overflow-y: scroll;
     width: 40vw;
-    height: 20vh;
+    height: 30vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2vw;
     margin-right: 4vw;

@@ -31,9 +31,9 @@ export const plantillaCores = async (data, alldata)=>{
         if(element.block == null){block = "None"}else{block = element.block};
         plantilla += /*html*/`
             <article class="info__cores">
-                <div class="container__info">
+                <div class="container__info_core">
                     <div class="content__info_core">
-                        <h1>Serial: ${element.serial}</h1>
+                        <h1>${element.serial}</h1>
                         <h5>Status: ${element.status}</h5>
                         <p>${element.last_update}</p>
                         <p>Block: ${block}</p>

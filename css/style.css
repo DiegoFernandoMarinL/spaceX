@@ -3,6 +3,10 @@
 body {
     display: flex;
     background: var(--color-1);
+    background-image: url('../storage/img/giphyackground.webp');
+    background-size: cover;
+    background-repeat: repeat; 
+    background-position: center; 
 }
 .allinfo__content{
     display: flex;
