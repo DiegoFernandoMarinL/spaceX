@@ -1,4 +1,4 @@
-import { getAllCrews, getAllDragons, getAllRockets, getAllLaunches, getAllHistory, getAllCores } from "./modules/app.js";
+import { getAllCrews, getAllDragons, getAllRockets, getAllLaunches, getAllHistory, getAllCores, getAllCapsules } from "./modules/app.js";
 
 let intervalId;
 let allInfoContent = document.querySelector(".allinfo__content");
@@ -8,9 +8,10 @@ let menuRockets = document.querySelector("#rockets");
 let menuLaunches = document.querySelector("#launches");
 let menuHistory = document.querySelector("#history");
 let menuCores = document.querySelector("#cores");
+let menuCapsules = document.querySelector("#capsules")
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await viewCores();
+    await viewCapsules();
 });
 
 let viewCrew = async e => {
@@ -61,6 +62,14 @@ let viewCores = async e => {
     repeatPagination(getAllCores);
 }
 
+let viewCapsules = async e => {
+    let styles = document.querySelector("#styles");
+    styles.href = 'css/style2.css';
+    allInfoContent.innerHTML = ""; 
+    allInfoContent.innerHTML = await getAllCapsules("0");
+    repeatPagination(getAllCapsules);
+}
+
 let repeatPagination = (functionView) => {
     let pagination = document.querySelectorAll(".pagination");
     pagination.forEach(element => {
@@ -104,6 +113,10 @@ menuHistory.addEventListener("click", () => {
 });
 menuCores.addEventListener("click", () => {
     viewCores();
+    clearInterval(intervalId);
+});
+menuCapsules.addEventListener("click", () => {
+    viewCapsules();
     clearInterval(intervalId);
 });
 

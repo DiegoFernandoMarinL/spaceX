@@ -7,7 +7,7 @@ export const plantillaHistory = async (data,alldata)=>{
     for (const element of data){
         plantilla += /*html*/`
             <article class="info__historys">
-                <div class="container__info">
+                <div class="container__info_core">
                     <div class="content__info">
                         <h1>${element.title}</h1>
                         <h5>${element.event_date_utc} - ${element.event_date_unix}</h5>

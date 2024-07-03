@@ -18,7 +18,7 @@ export const plantillaArrays = async (data)=>{
     return plantilla;
 }
 
-export const plantillaCores = async (data, alldata)=>{
+export const plantillaCapsules = async (data, alldata)=>{
     let plantilla = "";
     let plantillaPag = "";
     plantillaPag = await plantillaPagination(alldata.length);
@@ -32,12 +32,10 @@ export const plantillaCores = async (data, alldata)=>{
                         <h1>${element.serial}</h1>
                         <h5>Status: ${element.status}</h5>
                         <p>${element.last_update}</p>
-                        <p>Block: ${block}</p>
+                        <p>Type: ${element.type}</p>
                         <p>Reuse count: ${element.reuse_count}</p>
-                        <p>Rtls attempts: ${element.rtls_attempts}</p>
-                        <p>Rtls landings: ${element.rtls_landings}</p>
-                        <p>Asds attempts: ${element.asds_attempts}</p>
-                        <p>Asds landings: ${element.asds_landings}</p>
+                        <p>Water landings: ${element.water_landings}</p>
+                        <p>Land landings: ${element.land_landings}</p>
                     </div>
                     <div class="description__info">
                         <h5>Launches</h5>

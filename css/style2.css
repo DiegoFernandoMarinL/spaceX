@@ -4,7 +4,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-image: url('../storage/img/galaxy_background.gif');
+    background-image: url('../storage/img/giphyackground.webp');
     background-size: cover;
     background-repeat: repeat; 
     background-position: center; 
@@ -58,7 +58,7 @@ main{
 }
 .content__info_core{
     overflow-y: scroll;
-    width: 40vw;
+    width: 50vw;
     height: 30vh;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2vw;
@@ -74,7 +74,7 @@ main{
 }
 .description__info{
     width: 40vw;
-    height: 20vh;
+    height: 30vh;
     overflow-y: scroll;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

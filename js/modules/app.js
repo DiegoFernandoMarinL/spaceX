@@ -4,6 +4,7 @@ import { plantillaRockets } from "../components/rockets.js";
 import { plantillaLaunches } from "../components/launches.js";
 import { plantillaHistory } from "../components/history.js";
 import { plantillaCores } from "../components/cores.js";
+import { plantillaCapsules } from "../components/capsules.js";
 
 export const getLaunche = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/launches/${dato}`); 
@@ -138,5 +139,26 @@ export const getAllCores = async (dato) => {
     let dataDividida = dividirArray(array, Npartes);
 
     plantilla = await plantillaCores(dataDividida[dato],dataDividida);
+    return plantilla;
+}
+
+export const getAllCapsules = async (dato) => {
+    let res = await fetch(`https://api.spacexdata.com/v4/capsules`); 
+    let data = await res.json();
+    let plantilla= [];
+
+    function dividirArray(array, Npartes) {
+        let longitudParte = Math.ceil(array.length / Npartes);
+        let partes = [];
+        for (let i = 0; i < array.length; i += longitudParte) {
+            partes.push(array.slice(i, i + longitudParte));
+        }
+        return partes;
+    }
+    let array = data;
+    let Npartes = data.length/3;
+    let dataDividida = dividirArray(array, Npartes);
+
+    plantilla = await plantillaCapsules(dataDividida[dato],dataDividida);
     return plantilla;
 }

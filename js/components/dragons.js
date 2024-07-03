@@ -17,7 +17,7 @@ export const plantillaDragons = async (data, alldata)=>{
                 <li><img src="storage/img/item.svg">Decription:</li>
                 <p>${data.description}</p>
                 <li><img src="storage/img/item.svg">More info:</li>
-                <a href="${data.wikipedia}">Wikipedia</a>
+                <p><a href="${data.wikipedia}">wikipedia</a></p>
             </ul>
         </div>
         <div class="column center">
