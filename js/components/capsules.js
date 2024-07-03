@@ -21,11 +21,9 @@ export const plantillaArrays = async (data)=>{
 export const plantillaCapsules = async (data, alldata)=>{
     let plantilla = "";
     let plantillaPag = "";
-    let block;
     plantillaPag = await plantillaPagination(alldata.length);
     for (const element of data){
         let vlaunch = await plantillaArrays(element.launches);
-        if(element.block == null){block = "None"}else{block = element.block};
         plantilla += /*html*/`
             <article class="info__cores">
                 <div class="container__info_core">
