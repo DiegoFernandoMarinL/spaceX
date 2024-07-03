@@ -18,32 +18,36 @@ export const plantillaArrays = async (data, fuctionGet)=>{
     return plantilla;
 }
 
-export const plantillaLandpads = async (data, alldata)=>{
+export const plantillaLaunchpads = async (data, alldata)=>{
     let plantilla = "";
     let plantillaPag = "";
     plantillaPag = await plantillaPagination(alldata.length);
     for (const element of data){
         let vlaunch = await plantillaArrays(element.launches, getLaunche);
+        let vrocket = await plantillaArrays(element.rockets, getRocket);
         plantilla += /*html*/`
             <article class="info__cores">
                 <div class="container__info_core">
                     <div class="content__info_core">
                         <h1>${element.name}</h1>
                         <h5>${element.full_name}</h5>
-                        <p>${element.details}</p>
                         <p>Status: ${element.status}</p>
                         <p>Locality: ${element.locality}</p>
                         <p>Region: ${element.region}</p>
+                        <p>Time Zone: ${element.timezone}</p>
                         <p>Latitude: ${element.latitude}</p>
                         <p>Longitude: ${element.longitude}</p>
-                        <p>Landing attempts: ${element.landing_attempts}</p>
-                        <p>Landing successes: ${element.landing_successes}</p>
-                        <p>Biografia da click <a href="${element.wikipedia}" style="color: white">aqui</a></p>
+                        <p>Launch attempts: ${element.launch_attempts}</p>
+                        <p>Launch successes: ${element.launch_successes}</p>
                     </div>
                     <div class="description__info">
                         <div class="allLaunches">
                             <h5>Launches</h5>
                             <p>${vlaunch}</p>
+                        </div>
+                        <div class="allRockets">
+                            <h5>Rockets</h5>
+                            <p>${vrocket}</p>
                         </div>
                     </div>
                 </div>

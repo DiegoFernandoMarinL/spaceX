@@ -6,6 +6,7 @@ import { plantillaHistory } from "../components/history.js";
 import { plantillaCores } from "../components/cores.js";
 import { plantillaCapsules } from "../components/capsules.js";
 import { plantillaLandpads } from "../components/landpads.js";
+import { plantillaLaunchpads } from "../components/launchpads.js";
 
 export const getLaunche = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/launches/${dato}`); 
@@ -164,10 +165,30 @@ export const getAllCapsules = async (dato) => {
     return plantilla;
 }
 
-export const getAllLandpads = async (dato) => {
+export const getAllLaunchpads = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/launchpads`); 
     let data = await res.json();
-    console.log(data);
+    let plantilla= [];
+
+    function dividirArray(array, Npartes) {
+        let longitudParte = Math.ceil(array.length / Npartes);
+        let partes = [];
+        for (let i = 0; i < array.length; i += longitudParte) {
+            partes.push(array.slice(i, i + longitudParte));
+        }
+        return partes;
+    }
+    let array = data;
+    let Npartes = data.length/3;
+    let dataDividida = dividirArray(array, Npartes);
+
+    plantilla = await plantillaLaunchpads(dataDividida[dato],dataDividida);
+    return plantilla;
+}
+
+export const getAllLandpads = async (dato) => {
+    let res = await fetch(`https://api.spacexdata.com/v4/landpads`); 
+    let data = await res.json();
     let plantilla= [];
 
     function dividirArray(array, Npartes) {

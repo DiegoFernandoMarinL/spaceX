@@ -192,6 +192,7 @@ body {
 .hexagon-inner:hover {
     background: #e0e0e0;
 }
+
 .hexagon-inner img {
     width: 1.8vw;
     margin-bottom: 5px;
