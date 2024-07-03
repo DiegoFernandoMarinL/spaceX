@@ -3,6 +3,7 @@ import { plantillaDragons } from "../components/dragons.js";
 import { plantillaRockets } from "../components/rockets.js";
 import { plantillaLaunches } from "../components/launches.js";
 import { plantillaHistory } from "../components/history.js";
+import { plantillaCores } from "../components/cores.js";
 
 export const getLaunche = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/launches/${dato}`); 
@@ -72,7 +73,7 @@ export const getAllCrews = async (dato) => {
         return partes;
     }
     let array = data;
-    let Npartes = 10;
+    let Npartes = data.length/3;
     let dataDividida = dividirArray(array, Npartes);
     plantilla = await plantillaCrew(dataDividida[dato]);
     return plantilla; 
@@ -102,7 +103,6 @@ export const getAllLaunches = async (dato) => {
 export const getAllHistory = async (dato) => {
     let res = await fetch(`https://api.spacexdata.com/v4/history`); 
     let data = await res.json();
-    console.log(data);
     let plantilla= [];
 
     function dividirArray(array, Npartes) {
@@ -114,8 +114,29 @@ export const getAllHistory = async (dato) => {
         return partes;
     }
     let array = data;
-    let Npartes = 5;
+    let Npartes = data.length/3;
     let dataDividida = dividirArray(array, Npartes);
-    plantilla = await plantillaHistory(dataDividida[dato]);
+    plantilla = await plantillaHistory(dataDividida[dato],dataDividida);
+    return plantilla;
+}
+
+export const getAllCores = async (dato) => {
+    let res = await fetch(`https://api.spacexdata.com/v4/cores`); 
+    let data = await res.json();
+    let plantilla= [];
+
+    function dividirArray(array, Npartes) {
+        let longitudParte = Math.ceil(array.length / Npartes);
+        let partes = [];
+        for (let i = 0; i < array.length; i += longitudParte) {
+            partes.push(array.slice(i, i + longitudParte));
+        }
+        return partes;
+    }
+    let array = data;
+    let Npartes = data.length/3;
+    let dataDividida = dividirArray(array, Npartes);
+
+    plantilla = await plantillaCores(dataDividida[dato],dataDividida);
     return plantilla;
 }

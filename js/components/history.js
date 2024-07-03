@@ -1,9 +1,9 @@
 import { plantillaPagination } from "./pagination.js";
 
-export const plantillaHistory = async (data)=>{
+export const plantillaHistory = async (data,alldata)=>{
     let plantilla = "";
     let plantillaPag = "";
-    plantillaPag = await plantillaPagination(5);
+    plantillaPag = await plantillaPagination(alldata.length);
     for (const element of data){
         plantilla += /*html*/`
             <article class="info__historys">
