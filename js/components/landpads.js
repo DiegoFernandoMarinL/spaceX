@@ -47,11 +47,13 @@ export const plantillaLandpads = async (data, alldata)=>{
                         </div>
                     </div>
                 </div>
-                <div class="pagination-container">
-                    ${plantillaPag}
-                </div>
             </article>
         `;
     };
+    plantilla += /*html*/`
+        <div class="pagination-container">
+            ${plantillaPag}
+        </div>
+    `
     return plantilla;
 };

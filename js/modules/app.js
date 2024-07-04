@@ -78,7 +78,7 @@ export const getAllCrews = async (dato) => {
     let array = data;
     let Npartes = data.length/3;
     let dataDividida = dividirArray(array, Npartes);
-    plantilla = await plantillaCrew(dataDividida[dato]);
+    plantilla = await plantillaCrew(dataDividida[dato],dataDividida);
     return plantilla; 
 };
 

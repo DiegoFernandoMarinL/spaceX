@@ -13,7 +13,7 @@ let menuLandpads = document.querySelector("#landpads");
 let menuLaunchpads = document.querySelector("#launchpads")
 
 document.addEventListener("DOMContentLoaded", async () => {
-    await viewLaunchpads();
+    await viewCrew();
 });
 
 let viewCrew = async e => {

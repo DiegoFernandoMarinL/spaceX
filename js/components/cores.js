@@ -45,11 +45,13 @@ export const plantillaCores = async (data, alldata)=>{
                         <p>${vlaunch}</p>
                     </div>
                 </div>
-                <div class="pagination-container">
-                    ${plantillaPag}
-                </div>
             </article>
         `;
     };
+    plantilla += /*html*/`
+        <div class="pagination-container">
+            ${plantillaPag}
+        </div>
+    `
     return plantilla;
 };
